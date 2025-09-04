@@ -1,4 +1,5 @@
 const Header = (props) => {
+  console.log("bruh")
   return (
     <>
       <h1>{props.course}</h1>
@@ -9,7 +10,17 @@ const Header = (props) => {
 const Content = (props) => {
   return (
     <>
-      <p>{props.p1} {props.e1}</p>
+      <Part p={props.p1} e={props.e1} />
+      <Part p={props.p2} e={props.e2} />
+      <Part p={props.p3} e={props.e3} />
+    </>
+  )
+}
+
+const Part = (props) => {
+  return (
+    <>
+      <p>{props.p} {props.e}</p>
     </>
   )
 }
@@ -35,12 +46,10 @@ const App = () => {
   return (
     <div>
       <Header course={course}/>
-      <Content p1={part1} e1={exercises1}/>
-      <Content p1={part2} e1={exercises2}/>
-      <Content p1={part3} e1={exercises3}/>
+      <Content p1={part1} p2={part2} p3={part3} e1={exercises1} e2={exercises2} e3={exercises3}/>
       <Total e1={exercises1} e2={exercises2} e3={exercises3}/>
     </div>
   )
 }
 
-export default App 
+export default App  
